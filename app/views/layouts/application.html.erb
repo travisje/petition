@@ -13,8 +13,40 @@
   </head>
 
   <body>
+    <!-- Header -->
+    <div class="row">
+      <div class="large-12 columns">
 
+        <div class="large-4 columns">
+          <img src="/assets/art_app_2X.png" />
+        </div>
+        <div class="large-8 columns" style="text-align:right; margin-top:2em;">
+          <div class="row">
+            <p><!--
+              <a href="" style="white-space: nowrap;">THE PETITION</a> &nbsp;&nbsp;
+              <a href="">ABOUT</a> &nbsp;&nbsp;
+              <a href="">SIGNERS</a> &nbsp;&nbsp;
+              <a href="" style="white-space: nowrap;">ART APPS</a> &nbsp;&nbsp;
+              <a href="">NEWS</a> &nbsp;&nbsp;
+              <a href="">CONTACT</a> &nbsp;&nbsp;
+            -->
+              <a href=""><img src="/assets/share_twitter_2X.png" style="width:2rem; height:2rem;" /></a>
+              <a href=""><img src="/assets/share_facebook_2X.png" style="width:2rem; height:2rem;" /></a> &nbsp;
+            </p>
+           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Begin page content -->
     <%= yield %>
+    <!-- Footer -->
+    <div class="large-12 columns" style="background-color:#eee; padding-top:2rem;">
+      <div class="row">
+        <div class="large-12 columns">
+          <img src="/assets/made_with_love_in_NYC_2X.png" />
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
