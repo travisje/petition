@@ -1,5 +1,5 @@
 class SignerMailer < ApplicationMailer
-  default from: 'notifications@ArtApp.org'
+  default from: 'info@artapp.org'
    
   def welcome_email(signer)
     @signer = signer

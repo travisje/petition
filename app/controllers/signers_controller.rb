@@ -6,7 +6,7 @@ class SignersController < ApplicationController
   def create
     @signer = Signer.new(signer_params)
     if @signer.save
-      SignerMailer.welcome_email(@signer).deliver_now
+      SignerMailer.welcome_email(@signer).deliver_later
       render 'success'
     elsif Signer.find_by(email: params[:signer][:email].downcase)
       flash.now[:alert] = "The petition has already been signed by a user with this email. Please enter a valid email address."
