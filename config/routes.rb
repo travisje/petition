@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :signers, only: [:new, :create]
+
+  root 'features#index', as: :index
+
+  get '/about' => "features#about", as: :about
+  get '/art_apps' => "features#art_apps", as: :art_apps
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,7 +15,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
+  # Example of named route that can  be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):

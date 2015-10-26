@@ -1,14 +1,80 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Petition</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300italic,300' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <!-- flash message -->
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+          <%= content_tag :div, msg %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
+    <% end %>
+    
+    <!-- Header -->
+    <div class="row">
+      <div class="large-12 columns">
+
+        <div class="large-3 columns">
+          <br />
+          <a href="index.html"><img src="/assets/art_app_2X.png" border="0" /></a>
+        </div>
+        <div class="large-9 columns" style="text-align:right; margin-top:2em;">
+          <div class="row">
+            <p>
+              <span style="color:#bbb">HOME</span> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="petition.html" style="white-space: nowrap;">THE PETITION</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="about.html">ABOUT</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <!--<a href="">STATEMENTS</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
+              <a href="apps.html" style="white-space: nowrap;">ART APPS</a>
+
+              <!--
+              <a href="">NEWS</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="">CONTACT</a> &nbsp;&nbsp;&nbsp;&nbsp;
+              -->
+              
+              <ul class="soc">
+                  <li><a class="soc-twitter" href="https://twitter.com/home?status=Dear%20Apple,%20bring%20art%20to%20the%20world%20and%20the%20world%20to%20art!%20Please%20add%20an%20'Art'%20category%20to%20the%20App%20Store.%20http%3A//www.artapp.org%20%40AppStore" target="_blank"></a></li>
+                  <li><a class="soc-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.artapp.org" target="_blank"></a></li>
+              </ul>
+            </p>
+           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Begin page content -->
+    <%= yield %>
+    
+    <!-- Footer -->
+    <div class="large-12 columns" style="background-color:#dedede; padding-top:2rem;">
+      <div class="row">
+        <div class="large-2 columns">
+           <p style="color: #bbb; font-weight: bold; font-size: 0.75rem;">made with <span style="color: red;">&hearts;</span> in nyc and sf</p>
+        </div>
+        <div class="large-8 columns" style="text-align:center;">
+          <ul class="soc">
+            <li><a class="soc-twitter" href="https://twitter.com/home?status=Dear%20Apple,%20bring%20art%20to%20the%20world%20and%20the%20world%20to%20art!%20Please%20add%20an%20'Art'%20category%20to%20the%20App%20Store.%20http%3A//www.artapp.org%20%40AppStore" target="_blank"></a></li>
+            <li><a class="soc-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.artapp.org" target="_blank"></a></li>
+          </ul>
+        </div>
+        <div class="large-2 columns">
+          <p style="color: #bbb; font-weight: bold;"><span style="font-size: 1.2em;">Contact</span><br />
+          info@artapp.org</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
