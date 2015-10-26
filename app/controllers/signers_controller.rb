@@ -16,10 +16,6 @@ class SignersController < ApplicationController
       render 'new'
     end
   end
-  
-  def index
-
-  end
 
   private
     def signer_params 
