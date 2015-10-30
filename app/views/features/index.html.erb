@@ -189,17 +189,14 @@
         <div class="large-12 columns" style="padding-top:1rem;">
 
         <div class="carousel">
-          <div>
-            <h5 style="text-align:center; padding:2rem; font-size:1.4rem;">Art lies at the center of human culture. C'mon Apple, please get it together. <br /><br />
-              <strong>- John Baldessari, Artist</strong>
-            </h5>
-          </div>
-
-          <div>
-              <h5 style="text-align:center; padding:2rem; font-size:1.4rem;">Digital art knows no boundaries, and software is more important than ever for expressing all sorts of things we call "art." There should be a category on the App Store to reflect that. <br /><br />
-                <strong>- Paul Miller aka DJ Spooky</strong>
-              </h5>
-          </div>
+          <% Signer.custom_statements.each do |signer| %>
+            <div>
+                <h5 style="text-align:center; padding:2rem; font-size:1.4rem;"><%= signer[1] %>
+                  <br /><br />
+                  <strong>- <%= signer[0] %></strong>
+                </h5>
+            </div>
+          <% end %>
 
         </div>
       </div>

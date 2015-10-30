@@ -6332,34 +6332,16 @@ th.hide-for-touch {
 
 
 
-#wrapper {
-width: 125px; height: 125px;
-border-radius: 20px;
-border-color: #ddd;
-border-style: solid;
-border-width: 1;
-overflow: hidden;
-position: relative; /* this breaks the overflow:hidden in Chrome/Opera */
-
-/* this fixes the overflow:hidden in Chrome */
--webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-}
-
-#box {
-width: 125px; height: 125px;
-background-color: #ddd;
-
-}​
 
 
 
 @font-face {
     font-family: 'si';
-    src: url('../fonts/socicon.eot');
-    src: url('../fonts/socicon.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/socicon.woff') format('woff'),
-         url('../fonts/socicon.ttf') format('truetype'),
-         url('../fonts/socicon.svg#icomoonregular') format('svg');
+    src: url('/assets/socicon.eot');
+    src: url('/assets/socicon.eot?#iefix') format('embedded-opentype'),
+         url('/assets/socicon.woff') format('woff'),
+         url('/assets/socicon.ttf') format('truetype'),
+         url('/assets/socicon.svg#icomoonregular') format('svg');
     font-weight: normal;
     font-style: normal;
  
@@ -6368,7 +6350,7 @@ background-color: #ddd;
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family:si;
-        src: url(../fonts/socicon.svg) format(svg);
+        src: url(/assets/socicon.svg) format(svg);
     }
 }
 
@@ -6426,7 +6408,6 @@ background-color: #ddd;
 
 .soc a:hover {
     z-index: 2;
-    
 }
 
 .soc-icon-last{
@@ -6469,4 +6450,86 @@ background-color: #ddd;
 }
 .soc-linkedin:hover {
     background-color: #4785cb;
+}
+
+
+.apps img { 
+    width: 100px;
+    height: 100px; 
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 3px -2px  rgba(0, 0, 0, 0.8); 
+  }
+
+
+.soc2 {
+    overflow:hidden;
+    margin:0; padding:0;
+}
+
+.soc2 p {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    vertical-align: middle;
+}
+
+  .soc2 p a {
+    font-family:si!important;
+    font-style:normal;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+
+    -o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    overflow:hidden;
+    text-decoration:none;
+    text-align:center;
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin-right: 6px;
+    color: #bbb;
+    background-color: transparent;
+    top: 7px;
+}
+
+.soc2 a:hover {
+    z-index: 2;
+    background-color: transparent;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.soc2-icon-last{
+    margin:0 !important;
+}
+
+.soc2-twitter:before {
+    content:'a';
+}
+.soc2-facebook:before {
+    content:'b';
 }

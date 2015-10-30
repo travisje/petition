@@ -3,28 +3,28 @@
 
     <div class="large-3 columns">
       <br />
-      <a href="index.html"><img src="/assets/art_app_2X.png" border="0" /></a>
+      <%= link_to (image_tag("art_app_2X.png", border: "0")), root_path %>
     </div>
     <div class="large-9 columns" style="text-align:right; margin-top:2em;">
       <div class="row">
-        <p>
+
           <!-- <span style="color:#bbb">HOME</span>  -->
           <%= link_to "HOME", root_path, id: "1" %>&nbsp;&nbsp;&nbsp;&nbsp;
           <%= link_to "THE PETITION", new_signer_path, id: "2", style: "white-space: nowrap;" %>&nbsp;&nbsp;&nbsp;&nbsp;
           <%= link_to "ABOUT", about_path, id: "3" %> &nbsp;&nbsp;&nbsp;&nbsp;
           <!--<a href="">STATEMENTS</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
-          <%= link_to "ART APPS", art_apps_path, id: "4", style: "white-space: nowrap;" %>
+          <%= link_to "ART APPS", art_apps_path, id: "4", style: "white-space: nowrap;" %>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <!--
           <a href="">NEWS</a> &nbsp;&nbsp;&nbsp;&nbsp;
           <a href="">CONTACT</a> &nbsp;&nbsp;&nbsp;&nbsp;
           -->
           
-          <ul class="soc">
-              <li><a class="soc-twitter" href="https://twitter.com/home?status=Dear%20Apple,%20bring%20art%20to%20the%20world%20and%20the%20world%20to%20art!%20Please%20add%20an%20'Art'%20category%20to%20the%20App%20Store.%20http%3A//www.artapp.org%20%40AppStore" target="_blank"></a></li>
-              <li><a class="soc-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.artapp.org" target="_blank"></a></li>
-          </ul>
-        </p>
+          <span class="soc2">
+              <p><a class="soc2-twitter" href="https://twitter.com/addingart" target="_blank"></a></p>
+              <p><a class="soc2-facebook" href="https://www.facebook.com/addingart" target="_blank"></a></p>
+          </span>
+
        </div>
     </div>
   </div>
