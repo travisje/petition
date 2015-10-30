@@ -19,9 +19,9 @@ class SignersController < ApplicationController
   end
 
   private
-  
+
     def signer_params 
-      params.require(:signer).permit(:first_name, :last_name, :email, :country, :street_address, :zip, :comment, :display_sig, :showcase)
+      params.require(:signer).permit(:first_name, :last_name, :email, :country, :company, :occupation, :comment, :display_sig, :showcase)
     end
 
 end

@@ -17,9 +17,11 @@ class GoogleSheet
     worksheet[insert_row, 3] = signer.last_name
     worksheet[insert_row, 4] = signer.email
     worksheet[insert_row, 5] = signer.country
-    worksheet[insert_row, 6] = signer.comment
-    worksheet[insert_row, 8] = signer.display_sig
-    worksheet[insert_row, 9] = signer.created_at
+    worksheet[insert_row, 6] = signer.company
+    worksheet[insert_row, 7] = signer.occupation
+    worksheet[insert_row, 8] = signer.comment
+    worksheet[insert_row, 10] = signer.display_sig
+    worksheet[insert_row, 11] = signer.created_at
     worksheet.save
   end
 

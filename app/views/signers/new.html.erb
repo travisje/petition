@@ -1,6 +1,4 @@
 <%= render "/features/social_headline" %>
-
-
     <div class="row">
         <div class="large-12 columns" style="padding-top:1rem;">
           <p></p>
@@ -44,7 +42,17 @@
             </div>
             <div class="row">
               <div class="large-12 columns">
-                <%= f.text_area :comment, placeholder: "I'm signing because. . ." %>
+                <%= f.text_field :company, placeholder: "Company (optional)"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <%= f.text_field :occupation, placeholder: "Occupation (optional)"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <%= f.text_area :comment, placeholder: "I'm signing because...(optional)" %>
               </div>
             </div>
 
