@@ -187,17 +187,15 @@
 
     <div class="row">
         <div class="large-12 columns" style="padding-top:1rem;">
-
         <div class="carousel">
-          <% Signer.custom_statements.each do |signer| %>
+          <% SiteViewObject.new.custom_statements.each do |signer| %>
             <div>
-                <h5 style="text-align:center; padding:2rem; font-size:1.4rem;"><%= signer[1] %>
+                <h5 style="text-align:center; padding:2rem; font-size:1.4rem;"><%= signer[:statement] %>
                   <br /><br />
-                  <strong>- <%= signer[0] %></strong>
+                  <strong>- <%= signer[:name] %></strong>
                 </h5>
             </div>
           <% end %>
-
         </div>
       </div>
     </div>

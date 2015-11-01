@@ -7,13 +7,15 @@
     </div>
     <div class="large-9 columns" style="text-align:right; margin-top:2em;">
       <div class="row">
-
+          <!-- i want a method that take in the params controller and  action, creates a hash from this, sent creates a hash from this, adds class to element to change color -->
           <!-- <span style="color:#bbb">HOME</span>  -->
-          <%= link_to "HOME", root_path, id: "1" %>&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= link_to "THE PETITION", new_signer_path, id: "2", style: "white-space: nowrap;" %>&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= link_to "ABOUT", about_path, id: "3" %> &nbsp;&nbsp;&nbsp;&nbsp;
+          <% current_page = SiteViewObject.new %>
+          <% active = current_page.active_header(params) %>
+          <%= link_to "HOME", root_path, id: "1", class: active[:index] %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to "THE PETITION", new_signer_path, id: "2", style: "white-space: nowrap;, ", class: active[:petition] %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to "ABOUT", about_path, id: "3", class: active[:about] %> &nbsp;&nbsp;&nbsp;&nbsp;
           <!--<a href="">STATEMENTS</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
-          <%= link_to "ART APPS", art_apps_path, id: "4", style: "white-space: nowrap;" %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to "ART APPS", art_apps_path, id: "4", style: "white-space: nowrap;", class: active[:art_apps] %>&nbsp;&nbsp;&nbsp;&nbsp;
 
           <!--
           <a href="">NEWS</a> &nbsp;&nbsp;&nbsp;&nbsp;
