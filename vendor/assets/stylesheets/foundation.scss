@@ -6337,11 +6337,11 @@ th.hide-for-touch {
 
 @font-face {
     font-family: 'si';
-    src: url('/assets/socicon.eot');
-    src: url('/assets/socicon.eot?#iefix') format('embedded-opentype'),
-         url('/assets/socicon.woff') format('woff'),
-         url('/assets/socicon.ttf') format('truetype'),
-         url('/assets/socicon.svg#icomoonregular') format('svg');
+    src: font-url('socicon.eot');
+    src: font-url('socicon.eot?#iefix') format('embedded-opentype'),
+         font-url('socicon.woff') format('woff'),
+         font-url('socicon.ttf') format('truetype'),
+         font-url('socicon.svg#icomoonregular') format('svg');
     font-weight: normal;
     font-style: normal;
  
@@ -6350,7 +6350,7 @@ th.hide-for-touch {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family:si;
-        src: url(/assets/socicon.svg) format(svg);
+        src: font-url('socicon.svg') format(svg);
     }
 }
 
