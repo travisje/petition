@@ -9,8 +9,8 @@
       <div class="row">
           <!-- i want a method that take in the params controller and  action, creates a hash from this, sent creates a hash from this, adds class to element to change color -->
           <!-- <span style="color:#bbb">HOME</span>  -->
-          <% current_page = SiteViewObject.new %>
-          <% active = current_page.active_header(params) %>
+          <% current_page = SiteViewObject.new(params) %>
+          <% active = current_page.active_header%>
           <%= link_to "HOME", root_path, id: "1", class: active[:index] %>&nbsp;&nbsp;&nbsp;&nbsp;
           <%= link_to "THE PETITION", new_signer_path, id: "2", style: "white-space: nowrap;, ", class: active[:petition] %>&nbsp;&nbsp;&nbsp;&nbsp;
           <%= link_to "ABOUT", about_path, id: "3", class: active[:about] %> &nbsp;&nbsp;&nbsp;&nbsp;

@@ -1,19 +1,29 @@
 
-<%= render "/features/social_headline" %>
-<div class="large-7 columns">
-  
-  <h7 style="font-weight:bold;">THANK YOU FOR SIGNING!</h7>
-
-  <h7>We  appreciate your support for bringing Art to the App Store.</h7><br /><br />
-
-  <h7>You should see a note from us in your email box, and we’ll occasionally get in touch with an update.</h7><br /><br />
-
-  <h7>For keeping abreast of the latest news, you can find us on Twitter or join the Facebook group.</h7><br /><br />
-
-  <h7>And please consider spreading the word meanwhile to friends and family.  To help with this, here are a few social media links below.</h7><br /><br />
-
-  <h7>Thanks again!<h7><br /><br />
-
-  <h7>Share the Petition:</h7>
-
+<%= render "/features/social_headline"%>
+<div class="row">
+  <div class="large-12 columns" style="padding-top:1rem;">
+    <p></p>
+    <h6 style="font-weight:bold;">THANK YOU FOR SIGNING!</h6>
+    <br />
+    <h7>
+      We appreciate your support for bringing Art to the App Store, <%=@signer.first_name%>.
+      <br /><br />
+      You should see a note from us in your email box, and we’ll occasionally get in touch with an update (if you would prefer not to receive any updates, you can unsubscribe <u><a href="http://artapp.us1.list-manage1.com/unsubscribe?u=5735ff5d237023f1d78083096&id=eee4d60197" target="_blank">here</a></u>). 
+      <br /><br />
+      For keeping abreast of the latest news, you can find us on <u><a href="https://twitter.com/addingart" target="_blank">Twitter</a></u> or join the <u><a href="https://www.facebook.com/addingart" target="_blank">Facebook</a></u> group.
+      <br /><br />
+      And please consider spreading the word meanwhile to friends and family.  To help with this, here are a few social media links below.
+      <br /><br />
+      Thanks again!
+      <br /><br />
+      <div id="shareTools" style="width:100%">
+        <ul class="soc">
+          <li><a class="soc-twitter" href="https://twitter.com/home?status=Dear%20Apple,%20bring%20art%20to%20the%20world%20and%20the%20world%20to%20art!%20Please%20add%20an%20'Art'%20category%20to%20the%20App%20Store.%20http%3A//www.artapp.org%20%40AppStore" target="_blank"></a></li>
+          <li><a class="soc-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.artapp.org" target="_blank"></a></li>
+          <li><a class="soc-google" href="https://plus.google.com/share?url=http%3A//www.artapp.org"></a></li>
+          <li><a class="soc-linkedin soc-icon-last" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A//www.artapp.org&title=Petition%20Apple%20to%20add%20Art%20to%20the%20App%20Store&summary=&source="></a></li>
+        </ul>
+    </h7>
+    <br /><br /><br />
+  </div>
 </div>

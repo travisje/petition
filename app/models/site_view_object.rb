@@ -1,13 +1,13 @@
 class SiteViewObject
   
   require 'csv'
-  attr_accessor :signer
+  attr_accessor :params
   
-  def initialize(signer=nil)
-    @signer = signer
+  def initialize(params=nil)
+    @params = params
   end
 
-  def active_header(params)
+  def active_header
     if params[:controller] == "signers"
       {petition: "active-header"}
     elsif params[:controller] == "features"
@@ -33,6 +33,14 @@ class SiteViewObject
   def correct_apostrophe(row)
     row.map do |element|
       element.gsub("Õ","'")
+    end
+  end
+
+  def headline_text
+    if params[:controller] == "signers"
+      "<br />Bring art to the world and the world to art! <br />Please add an 'Art' category to the App Store. <br /><br />".html_safe
+    else
+      "Dear Apple,<br />Bring art to the world and the world to art! <br />Please add an 'Art' category to the App Store. <br /><br />".html_safe
     end
   end
 
