@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require slick
-//= require_tree .
+//= require carousel
+//= require share_tool
+
+

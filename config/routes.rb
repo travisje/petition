@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :signers, only: [:new, :create]
 
-  root 'features#index', as: :index
+  root 'features#index'
 
   get '/about' => "features#about", as: :about
   get '/art_apps' => "features#art_apps", as: :art_apps

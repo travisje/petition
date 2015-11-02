@@ -1,65 +1,24 @@
-
-
-<div style="background: #000 url('/assets/main_header_graphic_2X.jpg') no-repeat; background-size:100% auto;">
+<%= render "/features/social_headline" %>
     <div class="row">
-      <div class="large-12 columns">
-        <div>
-          <h3 style="padding-top:3em; padding-bottom:23m; text-align:center; color:#fff;">
-            Dear Apple,<br />
-            Bring art to the world and the world to art! <br />
-            Please add an 'art' category to the App Store. <br /><br />
-            <a href="javascript:document.getElementById('firstName').focus()" class="small radius button">ENDORSE</a><br/>
-            <a href=""><img src="/assets/share_button_2X.png" style="text-align:right; width:2rem; height:2rem;" /></a>
-            <br /><br />
-          </h3>
-        </div>
+        <div class="large-12 columns" style="padding-top:1rem;">
+          <p></p>
+          <a name="form"></a>
+            <h6>THE PETITION</h6>
       </div>
-    </div>
-</div>
-
-<div class="large-12 columns" style="background-color:#ededed;">
-    <div class="row">
-      <div class="large-12 columns" style="padding-top:1rem;">
-        <h6>STATEMENTS BY SIGNERS</h6>
-
-        <div class="carousel">
-          <div>
-            <h5 style="text-align:right; padding:2rem; font-size:1.4rem;"><em>Art lies at the center of human culture. C'mon Apple, please get it together. <br /><br />
-              <strong>- John Baldessari, Artist</strong></em>
-            </h5>
-          </div>
-
-          <div>
-              <h5 style="text-align:right; padding:2rem; font-size:1.4rem;"><em>Truth lies at the center of human culture. C'mon Apple, please get it together. <br /><br />
-                <strong>- Peter, Artist</strong></em>
-              </h5>
-          </div>
-
-          <div>
-              <h5 style="text-align:right; padding:2rem; font-size:1.4rem;"><em>Beauty lies at the center of human culture. C'mon Apple, please get it together. <br /><br />
-                <strong>- Kate, Artist</strong></em>
-              </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-
-
+  </div>
 
   <div class="row">
       <div class="large-12 columns" style="padding-top:1rem;">
-        <div class="large-8 columns">
-          <h6>THE PETITION</h6>
-          <p>Dear Apple, <br />
-            Bring art to the world and the world to art! Please add an 'Art' category to the App Store.
-          </p>
-          <p>We believe in the power of human culture, where art plays a central role.</p>
-          <p>Apple's past and current publicity has always focused on its support for artists and the act of creation.</p>
-          <p>Yet art-centered apps are now stuck in odd categories like Lifestyle, Education, or Photos &amp; Video.</p>
-          <p style="font-weight:bold;">Please show your support for creativity worldwide by adding an 'Art' category to the App Store.</p>
-        </div>
-        <div class="large-4 columns">
+      <div class="large-7 columns">
+        <h7 style="font-weight:bold;">Dear Apple, <br />
+          Bring art to the world and the world to art! Please add an 'Art' category to the App Store.
+        </h7><br /><br />
+        <h7>We believe in the power of human culture, where art plays a central role.</h7><br /><br />
+        <h7>Apple's past and current publicity has always focused on its support for artists and the act of creation.</h7><br /><br />
+        <h7>Yet art-centered apps are now stuck in odd categories like Lifestyle, Education, or Photos &amp; Video.</h7><br /><br />
+        <h7 style="font-weight:bold;">Please show your support for creativity worldwide by adding an 'Art' category to the App Store.</h7><br /><br />
+      </div>
+        <div class="large-5 columns">
           <%= form_for @signer do |f| %>
             <div class="row">
               <div class="large-12 columns">
@@ -83,17 +42,17 @@
             </div>
             <div class="row">
               <div class="large-12 columns">
-                <%= f.text_field :street_address, placeholder: "Street Address" %>
+                <%= f.text_field :company, placeholder: "Company (optional)"%>
               </div>
             </div>
             <div class="row">
               <div class="large-12 columns">
-                <%= f.text_field :zip, placeholder: "Zip Code" %>
+                <%= f.text_field :occupation, placeholder: "Occupation (optional)"%>
               </div>
             </div>
             <div class="row">
               <div class="large-12 columns">
-                <%= f.text_area :comment, placeholder: "I'm signing because. . ." %>
+                <%= f.text_area :comment, placeholder: "I'm signing because...(optional)" %>
               </div>
             </div>
 
