@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
-
-gem 'rails_12factor'
+ruby "2.2.1", 'patchlevel' => '85'
 
 gem 'rack-wwwhisper', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -63,4 +61,6 @@ group :test do
   gem "launchy"
   gem "selenium-webdriver"
 end
+
+gem 'rails_12factor', group: :production
 
