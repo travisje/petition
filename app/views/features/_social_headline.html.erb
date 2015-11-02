@@ -1,4 +1,4 @@
-<div style="background: #000 url('/assets/main_header_graphic_2X.jpg') no-repeat; background-size:100% auto;">
+<div style="background: #000 url('<%=asset_path('main_header_graphic_2X.jpg')%>') no-repeat; background-size:100% auto;">
     <div class="row">
       <div class="large-12 columns">
         <div>
@@ -11,7 +11,7 @@
           </h3>
            <div id="share" style="position: relative; padding-bottom:10px; text-align: center;">    
               <div id="shareMenu" style="width:100%; padding: 10px; position: absolute; z-index:10;">
-                <a href="#"><img src="/assets/share_button_2X.png" style="text-align:right; width:2rem; height:2rem;" /></a>
+                <%= link_to (image_tag("share_button_2X.png", style: "text-align:right; width:2rem; height:2rem;")), "#" %>
               </div>
 
               <div id="shareTools" style="width:100%; padding: 10px; position: absolute; z-index:11; display: none;">
