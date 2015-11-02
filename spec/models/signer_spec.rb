@@ -41,4 +41,11 @@ describe Signer do
     signer.valid?
     expect(signer.errors[:email]).to include("address has already been used for sign up. Please enter a valid Email address.")
   end
+
+  it "is invalid with a duplicate email address with different capitalization" do
+    Signer.create(first_name: "Travis", last_name: "Smith", country: "US", email: "example@example.com")
+    signer = Signer.new(first_name: "Mike", last_name: "McDaniels", country: "US", email: "Example@example.com")
+    signer.valid?
+    expect(signer.errors[:email]).to include("address has already been used for sign up. Please enter a valid Email address.")
+  end
 end
