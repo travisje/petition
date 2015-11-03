@@ -6,7 +6,7 @@
             <% current_page = SiteViewObject.new(params)%>
             <%= current_page.headline_text %>
             <% if params[:controller] == "features" %>
-              <%= link_to "ENDORSE", new_signer_path, class: "small radius button" %>
+              <%= link_to "ENDORSE", new_signer_path(anchor: "form"), class: "small radius button" %>
             <%end%>
             <br />
           </h3>
