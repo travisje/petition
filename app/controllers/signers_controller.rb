@@ -7,8 +7,8 @@ class SignersController < ApplicationController
   def create
     @signer = Signer.new(signer_params)
     if @signer.save
-      mailchimp = MailChimp.new
-      mailchimp.subscribe(@signer)
+      # mailchimp = MailChimp.new
+      # mailchimp.subscribe(@signer)
       GoogleSheet.new(@signer).add_record
       render 'success'
     else 

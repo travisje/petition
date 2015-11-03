@@ -18,3 +18,11 @@
 .active-header {
   color: #bbb;
 }
+
+.soc-override {
+  font-size: 25px !important;
+  width: 50px !important;
+  height: 50px !important;
+  margin-right: 20px !important;
+  padding-top: 9px !important;
+}

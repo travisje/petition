@@ -7,10 +7,8 @@
             <%= current_page.headline_text %>
             <% if params[:controller] == "features" %>
               <%= link_to "ENDORSE", new_signer_path, class: "small radius button" %>
-              <br />
-            <% else %>
-              <br /><br />
             <%end%>
+            <br />
           </h3>
            <div id="share" style="position: relative; padding-bottom:10px; text-align: center;">    
               <div id="shareMenu" style="width:100%; padding: 10px; position: absolute; z-index:10;">
@@ -26,6 +24,9 @@
                 </ul>
               </div>
             </div>
+            <% if params[:controller] == "signers" %>
+              <br /><br /><br />
+            <% end %>
           <p><br /><br /></p>
         </div>
       </div>
