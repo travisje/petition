@@ -60,8 +60,10 @@
 
             <div class="row">
               <div class="large-12 columns">
-                  <%= f.check_box :display_sig, id: "checkbox1" %>
-                  <%= f.label :display_sig, "display my signature on artapp.org" %>
+                  <%= f.check_box :display_sig, id: "checkbox1", checked: true %>
+                  <%= f.label :display_sig, "display my signature on artapp.org" %><br />
+                  <%= f.check_box :subscribe, id: "checkbox2", checked: true %>
+                  <%= f.label :subscribe, "sign me up for occasional news updates" %>
               </div>
             </div>
           <% end %>

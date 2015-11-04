@@ -26,8 +26,9 @@ class GoogleSheet
       worksheet[insert_row, 5] = signer.country
       worksheet[insert_row, 6] = signer.occupation
       worksheet[insert_row, 7] = signer.comment
-      worksheet[insert_row, 9] = signer.display_sig
-      worksheet[insert_row, 10] = signer.created_at
+      worksheet[insert_row, 9] = signer.subscribe
+      worksheet[insert_row, 10] = signer.display_sig
+      worksheet[insert_row, 11] = signer.created_at
       worksheet.save
     end
   end

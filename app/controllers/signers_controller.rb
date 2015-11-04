@@ -8,8 +8,10 @@ class SignersController < ApplicationController
     @signer = Signer.new(signer_params)
     if @signer.save
       render 'success'
-      mailchimp = MailChimp.new
-      mailchimp.subscribe(@signer)
+      if @signer.subscribe  
+        mailchimp = MailChimp.new
+        mailchimp.subscribe(@signer)
+      end
       GoogleSheet.new(@signer).add_record
     else 
       flash.now[:alert] = @signer.pretty_errors
@@ -20,7 +22,7 @@ class SignersController < ApplicationController
   private
 
     def signer_params 
-      params.require(:signer).permit(:first_name, :last_name, :email, :country, :company, :occupation, :comment, :display_sig, :showcase)
+      params.require(:signer).permit(:first_name, :last_name, :email, :country, :occupation, :comment, :display_sig, :subscribe)
     end
 
 end
