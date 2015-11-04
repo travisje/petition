@@ -59,10 +59,17 @@ describe Signer do
     expect(signer.errors[:email]).to include("is invalid")
   end
 
-  it "automatically lowercases email address" do
+  it "automatically downcases email address" do
     signer = Signer.new(email: "TesT@exaMple.com")
     expect(signer.email).to eq "test@example.com"
   end
+
+  it "saves the first name, last name, email, country, occupation, comment, and display signature preference" do
+      signer = FactoryGirl.create(:signer)
+      expect(Signer.find(signer.id)).to eq signer
+  end
+
+
 
 
 end
