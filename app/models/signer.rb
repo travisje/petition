@@ -7,6 +7,9 @@ class Signer < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }, presence: true
   validates :email, uniqueness: {case_sensitive: false, message: "address has already been used for sign up. Please enter a valid Email address."}
 
+  def self.total_number
+    Signer.all.count
+  end
 
   def email=(email)
     if email
