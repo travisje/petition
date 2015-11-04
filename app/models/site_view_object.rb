@@ -32,7 +32,7 @@ class SiteViewObject
 
   def correct_apostrophe(row)
     row.map do |element|
-      element.gsub("Õ","'")
+      element.gsub("Õ","'").gsub("Ò","\"").gsub("Ó", "\"")
     end
   end
 
