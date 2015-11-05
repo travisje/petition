@@ -33,6 +33,7 @@ class GoogleSheet
     end
   end
 
+
   private
 
     def first_empty_row

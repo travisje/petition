@@ -8,11 +8,8 @@ class SignersController < ApplicationController
     @signer = Signer.new(signer_params)
     if @signer.save
       render 'success'
-      if @signer.subscribe  
-        mailchimp = MailChimp.new
-        mailchimp.subscribe(@signer)
-      end
-      GoogleSheet.new(@signer).add_record
+      @signer.process_subscription
+      @signer.add_to_spreadsheet
     else 
       flash.now[:alert] = @signer.pretty_errors
       render 'new'

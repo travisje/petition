@@ -12,5 +12,12 @@ FactoryGirl.define do
     occupation {Faker::Lorem.word}
     comment {Faker::Lorem.sentence}
     display_sig random_boolean
-  end 
+  end
+
+  factory :invalid_signer do
+    first_name nil
+  end
+
+
+
 end

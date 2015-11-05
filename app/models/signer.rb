@@ -23,6 +23,17 @@ class Signer < ActiveRecord::Base
    errors.full_messages.join(".  ")
   end
 
+  def process_subscription
+    if subscribe && Rails.env.production?
+      mailchimp = MailChimp.new
+      mailchimp.subscribe(self)
+    end
+  end
+
+  def add_to_spreadsheet
+     GoogleSheet.new(self).add_record
+  end
+
   
 
 end
