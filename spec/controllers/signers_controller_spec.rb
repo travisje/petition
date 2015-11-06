@@ -14,21 +14,30 @@ describe SignersController do
   end
 
   describe "POST #create" do
-    before :each do
-      @signer = build(:signer)
-    end
 
     context "with valid attributes" do
       it "saves the new signer in the database" do
-        post :create
-        expect(assigns(:signer)).to eq @signer
+        expect{
+          post :create, signer: attributes_for(:signer)}.to change(Signer, :count).by(1)
       end
-      it "renders the :success template"
+      it "renders the :success template" do
+        post :create, signer: attributes_for(:signer)
+        expect(response).to render_template :success
+      end
     end
 
     context "with invalid attributes" do
-      it "does not save the new contact to the database"
-      it "re-renders the :new template"
+      it "does not save the new contact to the database" do
+        expect {
+          post :create, signer: attributes_for(:invalid_signer)
+        }.to_not change(Signer, :count)
+      end
+
+      it "re-renders the :new template" do
+        post :create, signer: attributes_for(:invalid_signer)
+        expect(response).to render_template :new
+      end
+
     end
   end
 

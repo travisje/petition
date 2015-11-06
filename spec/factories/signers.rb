@@ -3,6 +3,7 @@ def random_boolean
   [true,false].sample
 end
 
+
 FactoryGirl.define do 
   factory :signer do
     first_name {Faker::Name.first_name}
@@ -12,12 +13,11 @@ FactoryGirl.define do
     occupation {Faker::Lorem.word}
     comment {Faker::Lorem.sentence}
     display_sig random_boolean
+    subscribe random_boolean
+
+    factory :invalid_signer do
+      first_name nil
+    end
   end
-
-  factory :invalid_signer do
-    first_name nil
-  end
-
-
 
 end

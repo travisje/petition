@@ -31,7 +31,9 @@ class Signer < ActiveRecord::Base
   end
 
   def add_to_spreadsheet
+    if !(Rails.env.test?)
      GoogleSheet.new(self).add_record
+    end
   end
 
   

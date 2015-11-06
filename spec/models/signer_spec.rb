@@ -64,7 +64,7 @@ describe Signer do
     expect(signer.email).to eq "test@example.com"
   end
 
-  it "saves the first name, last name, email, country, occupation, comment, and display signature preference" do
+  it "saves the first name, last name, email, country, occupation, comment, display signature + subscribe prefs" do
       signer = FactoryGirl.create(:signer)
       expect(Signer.find(signer.id)).to eq signer
   end
