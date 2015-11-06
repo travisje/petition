@@ -11,25 +11,29 @@ class GoogleSheet
       session = GoogleDrive.login_with_oauth(access_token)
       @worksheet = session.spreadsheet_by_key(ENV['spreadsheet_id']).worksheets[0]
     rescue => e
-      Rails.logger.error {"Google Spreadsheet save error #{signer.first_name} #{signer.last_name} #{signer.id} #{e.message}"}
+      Rails.logger.error {"Google Spreadsheet Error - Initialization Error #{signer.first_name} #{signer.last_name} #{signer.id} #{e.message}"}
       @worksheet = nil
     end
   end
 
   def add_record
     if worksheet
-      insert_row = first_empty_row
-      worksheet[insert_row, 1] = signer.id
-      worksheet[insert_row, 2] = signer.first_name
-      worksheet[insert_row, 3] = signer.last_name
-      worksheet[insert_row, 4] = signer.email
-      worksheet[insert_row, 5] = signer.country
-      worksheet[insert_row, 6] = signer.occupation
-      worksheet[insert_row, 7] = signer.comment
-      worksheet[insert_row, 9] = signer.subscribe
-      worksheet[insert_row, 10] = signer.display_sig
-      worksheet[insert_row, 11] = signer.created_at
-      worksheet.save
+      begin
+        insert_row = first_empty_row
+        worksheet[insert_row, 1] = signer.id
+        worksheet[insert_row, 2] = signer.first_name
+        worksheet[insert_row, 3] = signer.last_name
+        worksheet[insert_row, 4] = signer.email
+        worksheet[insert_row, 5] = signer.country
+        worksheet[insert_row, 6] = signer.occupation
+        worksheet[insert_row, 7] = signer.comment
+        worksheet[insert_row, 9] = signer.subscribe
+        worksheet[insert_row, 10] = signer.display_sig
+        worksheet[insert_row, 11] = signer.created_at
+        worksheet.save
+      rescue => e
+        Rails.logger.error {"Google Spreadsheet Error - Save error #{signer.first_name} #{signer.last_name} #{signer.id} #{e.message}"}
+      end
     end
   end
 

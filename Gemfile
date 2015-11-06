@@ -32,7 +32,6 @@ gem 'figaro'
 
 gem 'google_drive'
 
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -60,6 +59,9 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"
+  gem "vcr"
+  gem 'typhoeus'
+  gem 'excon'
 end
 
 gem 'rails_12factor', group: :production

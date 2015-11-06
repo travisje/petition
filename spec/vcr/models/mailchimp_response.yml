@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://us1.api.mailchimp.com/2.0/lists/subscribe.json
+    body:
+      encoding: UTF-8
+      string: '{"id":"eee4d60197","email":{"email":"dadom@mrtrx.com"},"merge_vars":{"FNAME":"Madeline","LNAME":"Osinski"},"email_type":"HTML","double_optin":false,"update_existing":false,"replace_interests":false,"send_welcome":true,"apikey":"f88b60f7909a4e3223f64cb226af522a-us1"}'
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '66'
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Fri, 06 Nov 2015 22:03:43 GMT
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"email":"dadom@mrtrx.com","euid":"8cfbc94034","leid":"423300125"}'
+    http_version: 
+  recorded_at: Fri, 06 Nov 2015 22:03:43 GMT
+recorded_with: VCR 3.0.0
