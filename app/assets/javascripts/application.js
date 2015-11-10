@@ -15,6 +15,6 @@
 //= require foundation
 //= require slick
 //= require carousel
+//= require applink
+//= require applink_enable
 //= require share_tool
-
-
