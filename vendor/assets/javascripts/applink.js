@@ -4,7 +4,7 @@
             popup: 'auto',
             desktop: false,
             delegate: null,
-            timeout: 1500,
+            timeout: 2500,
             data: pluginName
         },
 
