@@ -31,7 +31,7 @@ class Signer < ActiveRecord::Base
   end
 
   def add_to_spreadsheet
-     GoogleSheet.new(self).add_record
+     GoogleSheet.new(:master_list, self).add_record
   end
 
 

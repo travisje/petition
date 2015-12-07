@@ -40,8 +40,12 @@ class SiteViewObject
     if params[:controller] == "signers"
       "Bring art to the world and the world to art! <br />Please share this petition:".html_safe
     else
-      "Dear Apple,<br />Bring art to the world and the world to art! <br />Please add an 'Art' category to the App Store. <br /><br />".html_safe
+      "Dear Apple,<br />Bring art to the world and the world to art! <br />Add an 'Art' category to the App Store. <br /><br />".html_safe
     end
+  end
+
+  def pull_statements
+    GoogleSheet.new(:statements_page).pull_sheet
   end
 
 
