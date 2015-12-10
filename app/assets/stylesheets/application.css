@@ -11,12 +11,14 @@
  * file per style scope.
  *
  *= require foundation
+ *= require slideout
  *= require slick
  *= require slick-theme
  *= require_self
  */
+
 .active-header {
-  color: #bbb;
+  color: #bbb !important;
 }
 
 .soc-override {
@@ -29,3 +31,53 @@
 
 .slick-slide p {margin-top: 10px;
 }
+
+
+.alternate-colors {
+  background: #fff;
+}
+
+.alternate-colors:nth-of-type(2n) {
+  background: #eee;
+}
+
+/*FOUNDATION OVERRIDE*/
+body {
+  background: none;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+  text-align:center;
+  padding: 2rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media only screen and (min-width: 40.0625em) {
+
+  h4 {
+    font-size: 1.1rem; }
+
+  h5 {
+    font-size: 1.4rem; }
+
+  h6 {
+    font-size: 1.2rem;
+    font-weight: 400; }
+}
+
+
+/*SLIDEOUT CUSTOM*/
+.slideout-menu { left: auto; }
+.btn-hamburger { left: auto; right: 12px;}
+.box { height: 1500px; }

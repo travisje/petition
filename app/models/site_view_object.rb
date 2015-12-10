@@ -17,6 +17,8 @@ class SiteViewObject
         {about: "active-header"}
       elsif params[:action] == "art_apps"
         {art_apps: "active-header"}
+      elsif params[:action] == "statements"
+        {statements: "active-header"}
       end
     end
   end

@@ -1,34 +1,41 @@
-<div class="row">
-  <div class="large-12 columns">
+<% current_page = SiteViewObject.new(params) %>
+<% active = current_page.active_header%>
+<nav id="menu">
+  <section class="menu-section">
+    <ul class="menu-section-list">
+      <li><%= link_to "HOME", root_path, class: active[:index] %></li>
+      <li><%= link_to "THE PETITION", new_signer_path, class: active[:petition] %></li>
+      <li><%= link_to "ABOUT", about_path, class: active[:about] %></li>
+      <li><%= link_to "STATEMENTS", statements_path, class: active[:statements] %></li>
+      <li><%= link_to "ART APPS", art_apps_path, class: active[:art_apps] %></li>
+    </ul>
+  </section>
+</nav>
 
-    <div class="large-3 columns">
-      <br />
-      <%= link_to (image_tag("art_app_2X.png", border: "0")), root_path %>
-    </div>
-    <div class="large-9 columns" style="text-align:right; margin-top:2em;">
-      <div class="row">
-          <!-- i want a method that take in the params controller and  action, creates a hash from this, sent creates a hash from this, adds class to element to change color -->
-          <!-- <span style="color:#bbb">HOME</span>  -->
-          <% current_page = SiteViewObject.new(params) %>
-          <% active = current_page.active_header%>
-          <%= link_to "HOME", root_path, id: "1", class: active[:index] %>&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= link_to "THE PETITION", new_signer_path, id: "2", style: "white-space: nowrap;, ", class: active[:petition] %>&nbsp;&nbsp;&nbsp;&nbsp;
-          <%= link_to "ABOUT", about_path, id: "3", class: active[:about] %> &nbsp;&nbsp;&nbsp;&nbsp;
-          <!--<a href="">STATEMENTS</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
-          <%= link_to "ART APPS", art_apps_path, id: "4", style: "white-space: nowrap;", class: active[:art_apps] %>&nbsp;&nbsp;&nbsp;&nbsp;
+<main id="panel">
 
-          <!--
-          <a href="">NEWS</a> &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="">CONTACT</a> &nbsp;&nbsp;&nbsp;&nbsp;
-          -->
-          
+  <div class="row">
+    <div class="large-12 columns"> </br>
+      <%= link_to (image_tag("art_app_2X.png", border: "0", width: "30%", height: "30%")), root_path %>
+      <div id="bignav">
+        <%= link_to "HOME", root_path, id: "1", class: active[:index] %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to "THE PETITION", new_signer_path, id: "2", style: "white-space: nowrap;", class: active[:petition] %>&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to "ABOUT", about_path, id: "3", class: active[:about] %> &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to "STATEMENTS", statements_path, id: "4", class: active[:statements] %> &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to "ART APPS", art_apps_path, id: "5", style: "white-space: nowrap;", class: active[:art_apps] %>&nbsp;&nbsp;&nbsp;&nbsp;     
+        <span class="soc2">
+            <p><a class="soc2-twitter" href="https://twitter.com/addingart" target="_blank"></a></p>
+            <p><a class="soc2-facebook" href="https://www.facebook.com/addingart" target="_blank"></a></p>
+        </span>
+      </div>
+      <div id="smallnav">
           <span class="soc2">
-              <p><a class="soc2-twitter" href="https://twitter.com/addingart" target="_blank"></a></p>
-              <p><a class="soc2-facebook" href="https://www.facebook.com/addingart" target="_blank"></a></p>
+            <p><a class="soc2-twitter" href="https://twitter.com/addingart" target="_blank"></a></p>
+            <p><a class="soc2-facebook" href="https://www.facebook.com/addingart" target="_blank"></a></p>
           </span>
+          <button class="toggle-button">☰</button>
+      </div>
 
-       </div>
     </div>
   </div>
-</div>
-<p></p>
+  <p></p>

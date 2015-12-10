@@ -11,5 +11,9 @@ class FeaturesController < ApplicationController
   def art_apps
 
   end
+
+  def statements
+    
+  end
   
 end

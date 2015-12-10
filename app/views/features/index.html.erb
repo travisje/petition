@@ -8,7 +8,7 @@
   <p></p>
     <div class="row">
       <div class="large-10 columns" style="padding-top:1rem;">
-        <h6>ARTS-CENTERED APPS</h6>
+        <h4>ARTS-CENTERED APPS</h4>
       </div>
       <div class="large-2 columns" style="padding-top:1rem;">
         <div style="text-align: right;"><p><strong><%=link_to "SEE MORE >", art_apps_path%></strong></p></div>
@@ -126,11 +126,11 @@
   <p></p>
     <div class="row">
       <div class="large-10 columns" style="padding-top:1rem;">
-        <h6>STATEMENTS BY SIGNERS</h6>
+        <h4>STATEMENTS BY SIGNERS</h4>
       </div>
       <div class="large-2 columns" style="padding-top:1rem;">
         <div style="text-align: right;">
-          <!--<p><strong><a href="statements.html">READ MORE &gt;</a></strong></p>-->
+          <p><strong><%=link_to "READ MORE >", statements_path%></strong></p>
         </div>
       </div>
     </div>
@@ -140,10 +140,9 @@
         <div class="carousel">
           <% SiteViewObject.new.custom_statements.each do |signer| %>
             <div>
-                <h5 style="text-align:center; padding:2rem; font-size:1.4rem;"><%= signer[:statement] %>
-                  <br /><br />
-                  <strong>- <%= signer[:name] %></strong>
-                </h5>
+                <h5><%= signer[:statement] %></h5>
+                <br /><br />
+                <h6>- <%= signer[:name] %></h6>
             </div>
           <% end %>
         </div>

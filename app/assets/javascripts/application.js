@@ -15,6 +15,8 @@
 //= require google_analytics
 //= require foundation
 //= require slick
+//= require slideout.min
+//= require slideout_invoke
 //= require carousel
 //= require applink
 //= require applink_enable
