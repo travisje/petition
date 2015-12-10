@@ -17,6 +17,14 @@
  *= require_self
  */
 
+.action-container {
+  background-color: #000;
+  background-image: image-url('main_header_graphic_2X.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+}
+
 .active-header {
   color: #bbb !important;
 }
@@ -111,5 +119,12 @@ h6 {
     display: none;
   }
 }
+/* */
+@media only screen and (max-width: 880px) {
+  .action-container {
+    background-position: center-right;
+    background-size: cover;
+  }
+}
 
-
+/*<div style="background: #000 url('<%=asset_path('main_header_graphic_2X.jpg')%>') no-repeat; background-size:100% auto;">*/
