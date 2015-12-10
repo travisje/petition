@@ -34,11 +34,11 @@
 
 
 .alternate-colors {
-  background: #fff;
+  background: #eee;
 }
 
 .alternate-colors:nth-of-type(2n) {
-  background: #eee;
+  background: #fff;
 }
 
 /*FOUNDATION OVERRIDE*/

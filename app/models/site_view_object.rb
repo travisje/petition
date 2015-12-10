@@ -46,9 +46,4 @@ class SiteViewObject
     end
   end
 
-  def pull_statements
-    GoogleSheet.new(:statements_page).pull_sheet
-  end
-
-
 end

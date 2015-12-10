@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104155605) do
+ActiveRecord::Schema.define(version: 20151210012009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artapps", force: :cascade do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "hyperlink"
+    t.string   "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "signers", force: :cascade do |t|
     t.string   "first_name"
@@ -28,6 +37,14 @@ ActiveRecord::Schema.define(version: 20151104155605) do
     t.string   "occupation"
     t.boolean  "feature"
     t.boolean  "subscribe"
+  end
+
+  create_table "statements", force: :cascade do |t|
+    t.string   "name"
+    t.text     "statement"
+    t.string   "hyperlink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
