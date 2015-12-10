@@ -81,7 +81,35 @@ h6 {
 .slideout-menu { 
   left: auto;
   width: 180px;
-
    }
+
 .btn-hamburger { left: auto; right: 12px;}
+
 .box { height: 1500px; }
+
+@media only screen and (max-width: 840px) {
+  #bignav {
+    display: none;
+  }
+
+  #smallnav {
+    display: block;
+  }
+
+  #menu {
+    display: hidden;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  
+  #menu {
+    display: none;
+  }
+  
+  #smallnav {
+    display: none;
+  }
+}
+
+
