@@ -78,6 +78,10 @@ h6 {
 
 
 /*SLIDEOUT CUSTOM*/
-.slideout-menu { left: auto; }
+.slideout-menu { 
+  left: auto;
+  width: 180px;
+
+   }
 .btn-hamburger { left: auto; right: 12px;}
 .box { height: 1500px; }
