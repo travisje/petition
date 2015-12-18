@@ -10,4 +10,9 @@ class Statement < ActiveRecord::Base
     end
   end
 
+  def self.featured
+    Statement.where(feature: TRUE).order(:id)
+  end
+
+
 end

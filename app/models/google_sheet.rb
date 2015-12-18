@@ -26,9 +26,8 @@ class GoogleSheet
   def tab_number
     tab_key = {
       master_list: 0,
-      home_page_statements: 1,
-      statements_page: 2,
-      art_apps: 3
+      statements_page: 1,
+      art_apps: 2
     }
     tab_key[tab_name]
   end
@@ -38,7 +37,8 @@ class GoogleSheet
       self.columns_key = {
         name: 1,
         statement: 2,
-        hyperlink: 3
+        hyperlink: 3,
+        feature: 4
       }
     elsif tab_name == :art_apps
       self.columns_key = {

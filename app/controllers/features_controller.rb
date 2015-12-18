@@ -2,6 +2,7 @@ class FeaturesController < ApplicationController
   
   def index
     @art_apps = Artapp.homepage_apps
+    @statements = Statement.featured
   end
 
   def about
