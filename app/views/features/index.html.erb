@@ -20,7 +20,7 @@
         <div class="apps">
           <% @art_apps.each do |app| %>
             <div>
-              <a href= <%= app.hyperlink %>>
+              <a href= "<%= app.hyperlink %>", target="_blank">
               <img src= <%= app.image_url %> class="appicon" /></a>
               <p style="text-align:center;"><%= app.name %></p>
             </div>
@@ -51,7 +51,7 @@
             <div>
                 <h5><%= signer.statement %></h5>
                 <br /><br />
-                <h6><a href="<%= signer.hyperlink %>">- <%= signer.name %></a></h6>
+                <h6><a href="<%= signer.hyperlink %>", target="_blank">- <%= signer.name %></a></h6>
             </div>
           <% end %>
         </div>

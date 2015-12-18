@@ -13,7 +13,7 @@
           <div class="apps">
             <% Artapp.by_category(category).each do |app| %>
               <div>
-                <a href=<%= app.hyperlink %>>
+                <a href="<%= app.hyperlink %>", target="_blank">
                 <img src=<%= app.image_url %> /></a>
                  <p style="text-align:center;"><%= app.name %></p>
               </div>
