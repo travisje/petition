@@ -23,11 +23,11 @@ class Artapp < ActiveRecord::Base
 
   def self.categories
     cat_array = []
-    categories = Artapp.select('distinct on(category) id, category').sort
+    categories = Artapp.select('distinct on(category) id, category').sort #array of unique categories of Artapp objects sorted by sheet order. 
     categories.each do |category_obj|
       cat_array <<category_obj.category
     end
-    cat_array.shift
+    cat_array.shift #remove first category which is only for homepage
     cat_array
   end
 

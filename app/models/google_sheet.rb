@@ -76,7 +76,7 @@ class GoogleSheet
     if worksheet && columns_key
       current_row = 2
       result = []
-      while current_row < first_empty_row
+      while current_row < first_empty_row # loop over each row
         result << {}
         columns_key.each do |column, index|
           result.last[column] = worksheet[current_row, index]
@@ -84,7 +84,7 @@ class GoogleSheet
         current_row += 1
       end
     end
-    result
+    result # returns array of hashes (indiv rows) from which to create objects with
   end
 
 

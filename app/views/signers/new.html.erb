@@ -18,7 +18,7 @@
         <strong>Please show your support for creativity worldwide by adding an 'Art' category to the App Store.<br /><br />
       </div>
         <div class="large-5 columns">
-          <%= form_for @signer do |f| %>
+          <%= form_for @signer, :html => { :honeypot => true } do |f| %>
             <div class="row">
               <div class="large-12 columns">
                 <%= f.text_field :first_name, placeholder: "First Name", required: true %>
