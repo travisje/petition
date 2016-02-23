@@ -79,7 +79,7 @@
               <h6 class="small-8 columns">Publisher: <%= story.publisher%></h6>
               <h6 class="small-4 columns" style="text-align: right; padding-right: 20px;"><a href=<%= story.url %>, target="_blank"> <%= story.link_text %></a></h6>
               <div class = "news-image" style="width: 800px; margin: 0 auto;">
-                <a href="<%= story.url %>"><img src= <%= story.image_url %> target="_blank" ></a>
+                <a href= <%= story.url %> ><img src= <%= story.image_url %> alt=""></a>
               </div>
             </div>
           <% end %>
