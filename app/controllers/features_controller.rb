@@ -3,6 +3,7 @@ class FeaturesController < ApplicationController
   def index
     @art_apps = Artapp.homepage_apps
     @statements = Statement.featured
+    @news = News.all.order(:id)
   end
 
   def about

@@ -27,7 +27,8 @@ class GoogleSheet
     tab_key = {
       master_list: 0,
       statements_page: 1,
-      art_apps: 2
+      art_apps: 2,
+      news: 3
     }
     tab_key[tab_name]
   end
@@ -47,6 +48,15 @@ class GoogleSheet
         hyperlink: 3,
         image_url: 4
       }
+    elsif tab_name == :news
+      self.columns_key = {
+        date: 1,
+        publisher: 2,
+        headline: 3,
+        image_url: 4,
+        link_text: 5,
+        url: 6
+      } 
     end
   end
 

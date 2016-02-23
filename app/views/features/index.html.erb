@@ -70,22 +70,16 @@
     </div>
 
     <div class="row">
-        <div class="large-12 columns" style="padding-top:1rem;">
-        <div class="news-carousel">    
+      <div class="large-12 columns" style="padding-top:1rem;">
+        <div class="news-carousel"> 
+          <% @news.each do |story| %>
             <div>
-                <h6>November, 13 2015</h6>
-                <h4>If Apple Cares So Much About Design, Why Does the App Store Ignore Artists?</h4>
-                <h6 class="small-8 columns">Publisher: Motherboard</h6>
-                <h6 class="small-4 columns" style="text-align: right; padding-right: 20px;"><a href="http://motherboard.vice.com/read/if-apple-cares-so-much-about-design-why-does-the-app-store-ignore-artists", target="_blank"> Read the Article >></a></h6>
+                <h6><%= story.date %></h6>
+                <h4><a href=<%= story.url %>><%= story.headline%></a></h4>
+                <h6 class="small-8 columns">Publisher: <%= story.publisher%></h6>
+                <h6 class="small-4 columns" style="text-align: right; padding-right: 20px;"><a href=<%= story.url %>, target="_blank"> <%= story.link_text %></a></h6>
             </div>
-            <div>
-                <h6>November, 16 2015</h6>
-                <h4>Why the Apple App Store Needs an "Art" Category</h4>
-                <h6 class="small-8 columns">Publisher: Pop Matters</h6>
-                <h6 class="small-4 columns" style="text-align: right; padding-right: 20px;"><a href="http://www.popmatters.com/post/why-the-apple-app-store-needs-an-art-category/", target="_blank">Read the Article >></a></h6>
-            </div>
-
+          <% end %>
         </div>
       </div>
     </div>
-</div>
