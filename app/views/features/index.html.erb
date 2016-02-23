@@ -75,12 +75,12 @@
           <% @news.each do |story| %>
             <div>
               <h6><%= story.date %></h6>
-              <h4><a href=<%= story.url %>, target="_blank"><%= story.headline%></a></h4>
+              <h4><a href= <%= story.url %> target="_blank"><%= story.headline%></a></h4>
               <div class = "news-image" style="width: 85%; height: auto; margin: 0 auto;">
-                <a href= <%= story.url %> > <img src=<%= story.image_url %> alt=""> </a>
+                <a href= <%= story.url %> target="_blank"> <img src=<%= story.image_url %> alt=""> </a>
               </div>
               <h6 class="small-8 columns">Publisher: <%= story.publisher%></h6>
-              <h6 class="small-4 columns" style="text-align: right; padding-right: 20px;"><a href=<%= story.url %>, target="_blank"> <%= story.link_text %></a></h6>
+              <h6 class="small-4 columns" style="text-align: right; padding-right: 20px;"><a href=<%= story.url %> target="_blank"> <%= story.link_text %></a></h6>
             </div>
           <% end %>
         </div>
