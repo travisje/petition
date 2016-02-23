@@ -8,6 +8,13 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+  $('.news-carousel').slick({
+    autoplay: true,
+    autoplaySpeed: 7000
+  });
+});
+
+$(document).ready(function(){
   $('.apps').slick({
     dots: true,
     infinite: false,
