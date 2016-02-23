@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('.news-carousel').slick({
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 7000
   });
 });
