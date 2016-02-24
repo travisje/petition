@@ -73,7 +73,7 @@ h6 {
 
 .news-carousel h4, .news-carousel h5, .news-carousel h6 {
   text-align: left;
-  padding: 1rem;
+  padding: 0;
   padding-left: 2rem;
 }
 
@@ -82,7 +82,11 @@ h6 {
   padding-top: 0rem;
 }
 
-
+.news-image {
+  width: 94%;
+  height: auto;
+  margin: 0 auto 19px auto;
+}
 
 @media only screen and (min-width: 40.0625em) {
 
@@ -97,6 +101,7 @@ h6 {
     font-weight: 400; }
 }
 
+@media only 
 
 /*SLIDEOUT CUSTOM*/
 .slideout-menu { 
