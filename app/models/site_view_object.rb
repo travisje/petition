@@ -19,6 +19,7 @@ class SiteViewObject
         {art_apps: "active-header"}
       elsif params[:action] == "statements"
         {statements: "active-header"}
+      else {nothing: "inactive-header"}
       end
     end
   end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/about' => "features#about", as: :about
   get '/art_apps' => "features#art_apps", as: :art_apps
   get '/statements' => "features#statements", as: :statements
+  get '/update/art-apps' => "features#update_app", as: :update_app
+  post '/update/art-apps' => "features#update_app_now", as: :update_app_now
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
