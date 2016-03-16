@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :signers, only: [:new, :create]
-
+  get '/petition', to: redirect('/signers/new')
   root 'features#index'
 
   get '/about' => "features#about", as: :about
