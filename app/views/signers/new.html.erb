@@ -52,20 +52,36 @@
 
 
             <div class="row">
-              <div class="large-12 columns">
-                  <%= f.submit "SUBMIT", class: "small radius button" %>
+              <div class="small-4 medium-3 large-4 columns">
+                  <%= f.submit "SUBMIT", class: "small radius button", style: "margin-bottom: 0px;" %>
                   <br/>
               </div>
+            
+              <div class="small-8 medium-9 large-8 columns">
+                <div style="display:inline-block; margin-right: 6px;">
+                  <%= f.check_box :display_sig, id: "checkbox1", checked: true %>
+                </div>
+                <div style="display:inline-block;">
+                  <%= f.label :display_sig, "display signature on artapp.org" %>
+                </div>
+                <br />
+                <div style="margin-top: -11px;">
+                  <div style="display:inline-block; margin-right: 6px;">
+                    <%= f.check_box :subscribe, id: "checkbox2", checked: true %>
+                  </div>
+                  <div style="display:inline-block;">
+                    <%= f.label :subscribe, "subscribe to news updates" %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="small-12 columns privacy">
+                  <div class="privacy">
+                    The information you provide will never be shared or used for any purpose other than the petition, and if you subscribe for updates, we will only share news on the petition and our ongoing, nonprofit mission to support the growth and diversity of App Art and arts-centered apps.
+                  </div>
+                </div>
             </div>
 
-            <div class="row">
-              <div class="large-12 columns">
-                  <%= f.check_box :display_sig, id: "checkbox1", checked: true %>
-                  <%= f.label :display_sig, "display my signature on artapp.org" %><br />
-                  <%= f.check_box :subscribe, id: "checkbox2", checked: true %>
-                  <%= f.label :subscribe, "sign me up for occasional news updates" %>
-              </div>
-            </div>
           <% end %>
         </div>
       </div>
