@@ -9,7 +9,7 @@ class SignersController < ApplicationController
     if @signer.save
       render 'success'
       @signer.process_subscription
-      @signer.add_to_spreadsheet
+      # @signer.add_to_spreadsheet
     else 
       flash.now[:alert] = @signer.pretty_errors
       render 'new'
