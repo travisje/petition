@@ -64,6 +64,9 @@ class GoogleSheet
     if worksheet
       signers = Signer.where("id > ?", last_added_id)
       if signers.present?
+        if signers.length > 500
+          signers = signers[0..500]
+        end
         insert_row = first_empty_row
         signers.each do |signer|
           add_record_batch(signer, insert_row)
