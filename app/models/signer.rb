@@ -34,5 +34,9 @@ class Signer < ActiveRecord::Base
      GoogleSheet.new(:master_list, self).add_record
   end
 
+  def self.batch_update
+    GoogleSheet.new(:master_list).batch_update
+  end
+
 
 end

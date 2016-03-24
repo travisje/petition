@@ -60,6 +60,25 @@ class GoogleSheet
     end
   end
 
+  def batch_update
+    if worksheet
+      signers = Signer.where("id > ?", last_added_id)
+      if signers.present?
+        insert_row = first_empty_row
+        signers.each do |signer|
+          add_record_batch(signer, insert_row)
+          insert_row += 1
+        end
+      end
+      worksheet.save
+    end
+  end
+
+  def last_added_id
+    last_entry_row = first_empty_row - 1
+     id = worksheet[last_entry_row, 1]
+  end
+
 
   def add_record
     if worksheet
@@ -76,6 +95,25 @@ class GoogleSheet
         worksheet[insert_row, 10] = signer.display_sig
         worksheet[insert_row, 11] = signer.created_at
         worksheet.save
+      rescue => e
+        Rails.logger.error {"Google Spreadsheet Error - Save error #{signer.first_name} #{signer.last_name} #{signer.id} #{e.message}"}
+      end
+    end
+  end
+
+  def add_record_batch(signer, insert_row)
+    if worksheet
+      begin
+        worksheet[insert_row, 1] = signer.id
+        worksheet[insert_row, 2] = signer.first_name
+        worksheet[insert_row, 3] = signer.last_name
+        worksheet[insert_row, 4] = signer.email
+        worksheet[insert_row, 5] = signer.country
+        worksheet[insert_row, 6] = signer.occupation
+        worksheet[insert_row, 7] = signer.comment
+        worksheet[insert_row, 9] = signer.subscribe
+        worksheet[insert_row, 10] = signer.display_sig
+        worksheet[insert_row, 11] = signer.created_at
       rescue => e
         Rails.logger.error {"Google Spreadsheet Error - Save error #{signer.first_name} #{signer.last_name} #{signer.id} #{e.message}"}
       end
