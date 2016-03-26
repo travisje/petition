@@ -41,9 +41,9 @@ class SiteViewObject
 
   def headline_text
     if params[:controller] == "signers"
-      "Bring art to the world and the world to art! <br />Please share this petition:".html_safe
+      "<span id='dear-apple' style='opacity: 0;'>Bring art to the world and the world to art! <br />Please share this petition:</span>".html_safe
     else
-      "Dear Apple,<br />Bring art to the world and the world to art! <br />Add an 'Art' category to the App Store. <br /><br />".html_safe
+      "<span id='dear-apple' style='opacity: 0;'>Dear Apple,<br />Bring art to the world and the world to art! <br />Add an 'Art' category to the App Store.</span><br /><br />".html_safe
     end
   end
 

@@ -30,6 +30,13 @@
               <h3 style="padding-top:3em; padding-bottom:23m; text-align:center; color:#fff;">
                 <% current_page = SiteViewObject.new(params)%>
                 <%= current_page.headline_text %>
+                <%= content_for :bottom_js do%>
+                  <script>
+                    $( document ).ready(function() {
+                      $("#dear-apple").fadeTo(1000,1);
+                    });
+                  </script>
+                <% end %>
                 <% if params[:controller] == "features" %>
                   <%= link_to "ENDORSE", new_signer_path, class: "small radius button" %>
                 <%end%>
