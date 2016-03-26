@@ -13,15 +13,19 @@
                     prefix : '', 
                     suffix : '' 
                   };
+
                   $( document ).ready(function() {
+                    var fade = function() {
+                     $('#invite-friends').fadeTo(1000, 1);
+                    }
                     var numAnim = new CountUp("countup", 0, <%= Signer.count %>, 0, 3, options);
-                    numAnim.start();
+                    numAnim.start(fade());
                   });
                 </script>
               <% end %>
               <h2 class="signers-subheadline"> TOTAL SIGNERS </h2>
               <h1 class="signers-headline" id="countup"></h1>
-              <h3 style="color: white; margin-top: 35px;">Invite some friends!</h3>
+              <h3 style="color: white; margin-top: 35px; opacity: 0;" id="invite-friends">Invite some friends!</h3>
             <% else %>
               <h3 style="padding-top:3em; padding-bottom:23m; text-align:center; color:#fff;">
                 <% current_page = SiteViewObject.new(params)%>
