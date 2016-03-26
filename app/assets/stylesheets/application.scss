@@ -16,6 +16,29 @@
  *= require slick-theme
  *= require_self
  */
+  .social-headline {
+    color: white;
+    text-align: center;
+
+  }
+ .signers-headline {
+   
+   font-weight: 100;
+   font-size: 205px;
+   /* padding: 0px; */
+   /* margin: 0px; */
+   color: inherit;
+   line-height: 87%;
+   margin-top: 18px;
+ }
+
+ .signers-subheadline {
+  font-weight: 300;
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-top: 57px;
+  color: inherit;
+ }
 
 .action-container {
   background-color: #000;
@@ -160,5 +183,16 @@ h6 {
     background-size: cover;
   }
 }
+
+@media only screen and (max-width: 719px) {
+  
+  .signers-subheadline {
+    font-size: 7vw;
+  }
+  .signers-headline {
+    font-size: 28vw;
+  }
+}
+
 
 /*<div style="background: #000 url('<%=asset_path('main_header_graphic_2X.jpg')%>') no-repeat; background-size:100% auto;">*/

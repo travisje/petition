@@ -17,6 +17,7 @@
 //= require slick
 //= require slideout.min
 //= require slideout_invoke
+//= require count-up
 //= require carousel
 //= require applink
 //= require applink_enable

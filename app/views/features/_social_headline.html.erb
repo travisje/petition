@@ -1,15 +1,37 @@
 <div class = "action-container">
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-12 columns social-headline">
         <div>
-          <h3 style="padding-top:3em; padding-bottom:23m; text-align:center; color:#fff;">
-            <% current_page = SiteViewObject.new(params)%>
-            <%= current_page.headline_text %>
-            <% if params[:controller] == "features" %>
-              <%= link_to "ENDORSE", new_signer_path(anchor: "form"), class: "small radius button" %>
-            <%end%>
-            <br />
-          </h3>
+            <% if params[:controller] == "signers" %>
+              <%= content_for :bottom_js do%>
+                <script>
+                  var options = {
+                    useEasing : true, 
+                    useGrouping : true, 
+                    separator : ',', 
+                    decimal : '.', 
+                    prefix : '', 
+                    suffix : '' 
+                  };
+                  $( document ).ready(function() {
+                    var numAnim = new CountUp("countup", 0, <%= Signer.count %>, 0, 3, options);
+                    numAnim.start();
+                  });
+                </script>
+              <% end %>
+              <h2 class="signers-subheadline"> TOTAL SIGNERS </h2>
+              <h1 class="signers-headline" id="countup"></h1>
+              <h3 style="color: white; margin-top: 35px;">Invite some friends!</h3>
+            <% else %>
+              <h3 style="padding-top:3em; padding-bottom:23m; text-align:center; color:#fff;">
+                <% current_page = SiteViewObject.new(params)%>
+                <%= current_page.headline_text %>
+                <% if params[:controller] == "features" %>
+                  <%= link_to "ENDORSE", new_signer_path(anchor: "form"), class: "small radius button" %>
+                <%end%>
+                <br />
+              </h3>
+            <% end %>
            <div id="share" style="position: relative; padding-bottom:10px; text-align: center;">    
               <div id="shareMenu" style="width:100%; padding: 10px; position: absolute; z-index:10;">
                 <%= image_tag("share_button_2X.png", style: "text-align:right; width:2rem; height:2rem; cursor:pointer;")%>
@@ -25,7 +47,7 @@
               </div>
             </div>
             <% if params[:controller] == "signers" %>
-              <br /><br /><br />
+              <br />
             <% end %>
           <p><br /><br /></p>
         </div>
